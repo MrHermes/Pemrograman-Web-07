@@ -21,11 +21,14 @@
         <div id="main-menu">
             <h2>Sistem Pendaftaran Siswa Baru SMK Coding</h2>
             <?php
-            if ($_GET['status'] == 'sukses') {
-                echo "<p class='success'>Pendaftaran berhasil!</p>";
-            } else {
-                echo "<p class='fail'>Pendaftaran gagal!</p>";
-            }
+                $status=!empty($_GET['status']) ? $_GET['status'] : "";
+                if ($status){
+                    if ($status == 'sukses') {
+                        echo "<p class='success'>Pendaftaran berhasil!</p>";
+                    } else {
+                        echo "<p class='fail'>Pendaftaran gagal!</p>";
+                    }
+                }
             ?>
             <ul class="main-button">
                 <li class="main-choose"><a href="form-daftar.php">Daftar Baru</a></li>
